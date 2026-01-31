@@ -8,6 +8,7 @@
     "examples/bags-typescript"
   ],
   "scripts": {
+    "prepare": "npm run build",
     "build": "npm run build --workspaces --if-present",
     "build:sdk": "npm run build -w hyperstack-bags",
     "example:bags-typescript": "npm run start -w bags-typescript-example",
