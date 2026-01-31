@@ -11,7 +11,7 @@ Example stacks and applications built with [Hyperstack](https://github.com/Hyper
 ### Setup and Run
 
 ```bash
-git clone https://github.com/HyperTekOrg/hyperstack-examples.git
+git clone https://github.com/adiman9/hyperstack-examples.git
 cd hyperstack-examples
 npm install
 npm run example:bags-typescript
