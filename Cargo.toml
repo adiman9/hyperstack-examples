@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = [
+    "stacks/bags",
+    "examples/bags-server",
+]
+
+[workspace.package]
+edition = "2021"
+license = "Apache-2.0"

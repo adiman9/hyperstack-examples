@@ -1,0 +1,11 @@
+[project]
+name = "bags-fees"
+
+[[stacks]]
+name = "bags-fees"
+ast = "BagsFees"
+url = "wss://bags-fees-h2pczx.stack.usehyperstack.com"
+
+[sdk]
+typescript_output_file = "../../sdk/typescript/src/bags/index.ts"
+rust_module_mode = false

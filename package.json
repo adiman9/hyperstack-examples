@@ -1,0 +1,27 @@
+{
+  "name": "hyperstack-examples",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Example stacks and applications built with Hyperstack",
+  "workspaces": [
+    "sdk/typescript",
+    "examples/bags-typescript"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "build:sdk": "npm run build -w hyperstack-bags",
+    "example:bags-typescript": "npm run start -w bags-typescript-example",
+    "example:bags-typescript:dev": "npm run dev -w bags-typescript-example"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "hyperstack",
+    "solana",
+    "blockchain",
+    "streaming"
+  ],
+  "author": "HyperTek",
+  "license": "MIT"
+}

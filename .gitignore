@@ -1,0 +1,19 @@
+# Rust
+target/
+Cargo.lock
+
+# Node
+node_modules/
+dist/
+*.tgz
+
+# Environment
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+target/
+.hyperstack/
