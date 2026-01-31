@@ -27,7 +27,7 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "hyperstack-typescript": ">=0.3.0"
+    "hyperstack-typescript": ">=0.4.0"
   },
   "peerDependenciesMeta": {
     "hyperstack-typescript": {
