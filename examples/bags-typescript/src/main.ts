@@ -13,9 +13,7 @@ function printClaim(claim: BagsFees) {
   console.log('\n=== Bags Claim (Base Mint) ===');
   console.log('Base Mint:', claim.id?.base_mint ?? 'N/A');
   console.log('Quote Mint:', claim.id?.quote_mint ?? 'N/A');
-  console.log('Fee Share Authority:', claim.id?.fee_share_authority ?? 'N/A');
   console.log('Claim Count:', claim.stats?.claim_count ?? 0);
-  console.log('Total User Claimed Fees:', claim.stats?.total_user_claimed_fees ?? 'N/A');
   console.log('Last Claimer:', claim.stats?.last_claimer ?? 'N/A');
   console.log('Last Claim At:', formatTimestamp(claim.stats?.last_claim_timestamp));
   console.log();
