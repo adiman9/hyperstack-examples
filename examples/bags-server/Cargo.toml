@@ -10,7 +10,7 @@ path = "src/main.rs"
 
 [dependencies]
 bags-fees-v2 = { path = "../../stacks/bags" }
-hyperstack-server = "0.3"
+hyperstack-server = "0.4"
 tokio = { version = "1.0", features = ["full"] }
 anyhow = "1.0"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
