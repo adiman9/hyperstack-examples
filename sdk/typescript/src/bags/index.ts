@@ -1,6 +1,5 @@
 export interface BagsFeesId {
   base_mint?: string | null;
-  fee_share_authority?: string | null;
   quote_mint?: string | null;
 }
 
@@ -8,7 +7,6 @@ export interface BagsFeesStats {
   claim_count?: number | null;
   last_claim_timestamp?: number | null;
   last_claimer?: string | null;
-  total_user_claimed_fees?: Record<string, any> | null;
 }
 
 export interface BagsFees {

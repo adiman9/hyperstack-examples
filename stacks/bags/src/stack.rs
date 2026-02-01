@@ -37,16 +37,6 @@ pub mod bags_fees_v2_stream {
             strategy = SetOnce
         )]
         pub quote_mint: Option<String>,
-
-        #[from_instruction(
-            [
-                generated_sdk::instructions::ClaimUser::fee_share_authority,
-                generated_sdk::instructions::ForceClaimUser::fee_share_authority
-            ],
-            lookup_index,
-            strategy = SetOnce
-        )]
-        pub fee_share_authority: String,
     }
 
     #[derive(Debug, Clone, Serialize, Deserialize, Stream)]
@@ -80,11 +70,5 @@ pub mod bags_fees_v2_stream {
             lookup_by = accounts::base_mint
         )]
         pub last_claimer: Option<String>,
-
-        #[map(
-            generated_sdk::accounts::FeeShareAuthorityHeader::total_user_claimed_fees,
-            strategy = LastWrite
-        )]
-        pub total_user_claimed_fees: Option<u128>,
     }
 }
