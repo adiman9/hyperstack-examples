@@ -80,7 +80,7 @@ The TypeScript example connects to a hosted stack by default. If you want to run
 
 3. Update the example to connect to your local server by modifying `examples/bags-typescript/src/main.ts`:
    ```typescript
-   const hs = await HyperStack.connect(BAGSFEES_STACK, {
+   const hs = await HyperStack.connect(BAGS_FEES_STACK, {
      url: 'ws://localhost:8879'
    });
    ```
