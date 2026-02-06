@@ -3,7 +3,7 @@ name = "bags-fees"
 
 [[stacks]]
 name = "bags-fees"
-ast = "BagsFees"
+stack = "BagsFees"
 url = "wss://bags-fees-h2pczx.stack.usehyperstack.com"
 
 [sdk]

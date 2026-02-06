@@ -1,8 +1,9 @@
 use hyperstack::prelude::*;
 
 #[hyperstack(idl = "idl/bags-fees-v2.json")]
-pub mod bags_fees_v2_stream {
+pub mod bags_fees {
     use hyperstack::macros::Stream;
+    use hyperstack::resolvers::TokenMetadata;
 
     use serde::{Deserialize, Serialize};
 
@@ -15,6 +16,8 @@ pub mod bags_fees_v2_stream {
     pub struct BagsUserClaimsByMint {
         pub id: ClaimMintId,
         pub stats: ClaimStats,
+        #[resolve(from = "id.base_mint")]
+        pub base_token_metadata: Option<TokenMetadata>,
     }
 
     #[derive(Debug, Clone, Serialize, Deserialize, Stream)]
@@ -22,7 +25,6 @@ pub mod bags_fees_v2_stream {
         #[from_instruction(
             [
                 generated_sdk::instructions::ClaimUser::base_mint,
-                generated_sdk::instructions::ForceClaimUser::base_mint
             ],
             primary_key,
             strategy = SetOnce
@@ -32,7 +34,6 @@ pub mod bags_fees_v2_stream {
         #[from_instruction(
             [
                 generated_sdk::instructions::ClaimUser::quote_mint,
-                generated_sdk::instructions::ForceClaimUser::quote_mint
             ],
             strategy = SetOnce
         )]
@@ -44,7 +45,6 @@ pub mod bags_fees_v2_stream {
         #[aggregate(
             from = [
                 generated_sdk::instructions::ClaimUser,
-                generated_sdk::instructions::ForceClaimUser
             ],
             strategy = Count,
             lookup_by = accounts::base_mint
@@ -54,7 +54,6 @@ pub mod bags_fees_v2_stream {
         #[derive_from(
             from = [
                 generated_sdk::instructions::ClaimUser,
-                generated_sdk::instructions::ForceClaimUser
             ],
             field = __timestamp,
             lookup_by = accounts::base_mint
@@ -64,7 +63,6 @@ pub mod bags_fees_v2_stream {
         #[derive_from(
             from = [
                 generated_sdk::instructions::ClaimUser,
-                generated_sdk::instructions::ForceClaimUser
             ],
             field = accounts::user,
             lookup_by = accounts::base_mint
